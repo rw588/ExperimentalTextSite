@@ -44,6 +44,9 @@ __pycache__/
 *.synctex.gz
 *.tex           # only if Quarto-generated; don't ignore hand-written .tex
 
+# Claude Code
+.claude/
+
 # Editor
 .idea/
 .vscode/
