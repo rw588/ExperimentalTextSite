@@ -11,7 +11,7 @@ book:
       email: rwaddy@ethz.ch
   date: last-modified
   date-format: "MMMM YYYY"
-  repo-url: https://github.com/rwaddy/experimental-physics-text
+  repo-url: https://github.com/rw588/ExperimentalTextSite
   repo-actions: [edit, issue]
   downloads: [pdf]
   search: true
