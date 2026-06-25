@@ -33,7 +33,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Install Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
+        uses: quarto-dev/quarto-actions/setup@v2  # check for v3 — may still target Node 20
         with:
           version: "1.5.57"   # pin; bump deliberately
 
@@ -71,7 +71,7 @@ jobs:
           retention-days: 90
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4  # v4 targets Node 22
         with:
           path: _book/
 
