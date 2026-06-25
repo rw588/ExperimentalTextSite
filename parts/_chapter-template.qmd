@@ -1,0 +1,78 @@
+---
+# CHAPTER TEMPLATE — copy this file, rename it, and fill in the content.
+# Replace all <PLACEHOLDER> tags. Remove this comment block.
+#
+# Filename convention:  parts/<NN-part-slug>/<MM-chapter-slug>.qmd
+# Label convention:     sec-<slug>  (for cross-referencing with @sec-<slug>)
+title: "<Module number>. <Chapter title>"
+author: Robert Waddy
+date: last-modified
+---
+
+```{=html}
+<div class="chapter-header-meta">
+  <strong>Part N — Part title</strong> &middot; Module MN &middot; <em>Tier: Core + Going deeper</em>
+</div>
+```
+
+<!-- One-sentence module summary for orientation. -->
+*<Module summary: what problem this solves and why it matters experimentally.>*
+
+---
+
+## Core {#sec-<slug>-core}
+
+::: {.callout-note appearance="minimal" icon="false"}
+### Core — <Chapter title>
+
+<!-- Self-contained examinable material. -->
+<!-- Target: ~4 pages in the PDF. -->
+
+<Content here.>
+
+:::
+
+---
+
+## Going deeper {#sec-<slug>-deeper}
+
+::: {.callout-tip appearance="minimal" icon="false"}
+### Going deeper
+
+<!-- MSc/PhD-level extensions, derivations, edge cases. -->
+
+<Content here.>
+
+:::
+
+---
+
+## Bench {#sec-<slug>-bench}
+
+::: {.callout-warning appearance="minimal" icon="false"}
+### Bench Notes for this module
+
+The following Bench Notes expand on specific tools or design rules introduced above:
+
+- [Bench Note: <Title>](<path-to-bench-note>.qmd)
+
+:::
+
+---
+
+## Key references {#sec-<slug>-refs}
+
+::: {.callout-important appearance="minimal" icon="false"}
+### Key references
+
+- <Primary reference> [@<key>]
+- <Secondary reference> [@<key>]
+
+:::
+
+---
+
+## Exercises {#sec-<slug>-exercises .unnumbered}
+
+1. <Exercise 1.>
+2. <Exercise 2.>

@@ -1,0 +1,212 @@
+---
+title: "M3. Estimation theory: least squares, MLE, Fisher information"
+subtitle: "The Cramér–Rao bound and the best you can possibly do"
+author: Robert Waddy
+date: last-modified
+bibliography: ../../references.bib
+---
+
+```{=html}
+<div class="chapter-header-meta">
+  <strong>Part I — Measurement &amp; Uncertainty</strong> &middot; Module M3
+  &middot; Prerequisite: M1 (probability), M2 (error propagation)
+</div>
+```
+
+*Fitting data is not just arithmetic — it is inference. This module develops the statistical language that asks: given this dataset, what is the best estimate of my parameter, and how well can any unbiased estimator do?  The answer is the **Cramér–Rao bound**, and understanding it is what separates an experiment designed to learn something from one designed to look busy.*
+
+---
+
+## Core {#sec-fisher-core}
+
+::: {.callout-note appearance="minimal" icon="false"}
+### Core
+
+#### Estimators
+
+An **estimator** $\hat{\theta}(\mathbf{x})$ is any function of the data $\mathbf{x} = (x_1, \ldots, x_N)$ used to infer a parameter $\theta$.  Three properties matter:
+
+- **Bias:** $B(\hat\theta) = \mathbb{E}[\hat\theta] - \theta$.  An estimator is *unbiased* if $B = 0$.
+- **Consistency:** $\hat\theta \to \theta$ in probability as $N \to \infty$.
+- **Efficiency:** how close $\operatorname{Var}(\hat\theta)$ is to the theoretical minimum.
+
+The sample mean $\bar{x} = \frac{1}{N}\sum x_i$ is the canonical example: unbiased ($\mathbb{E}[\bar x] = \mu$) and consistent.
+
+#### Least squares as a special case of MLE
+
+For data $y_i = f(x_i; \theta) + \varepsilon_i$ with independent Gaussian noise $\varepsilon_i \sim \mathcal{N}(0, \sigma_i^2)$, the log-likelihood is
+
+$$
+\ln \mathcal{L}(\theta; \mathbf{y}) = -\frac{1}{2}\sum_{i=1}^{N} \frac{[y_i - f(x_i;\theta)]^2}{\sigma_i^2} + \text{const}.
+$$ {#eq-log-likelihood-gaussian}
+
+Maximising @eq-log-likelihood-gaussian is identical to minimising the **weighted sum of squares**
+
+$$
+\chi^2(\theta) = \sum_{i=1}^{N} \frac{[y_i - f(x_i;\theta)]^2}{\sigma_i^2}.
+$$ {#eq-chi2}
+
+Ordinary (unweighted) least squares arises when all $\sigma_i$ are equal.  **Least squares is MLE for Gaussian errors** — no more, no less.
+
+#### The likelihood function
+
+The **likelihood** $\mathcal{L}(\theta; \mathbf{x}) = p(\mathbf{x}|\theta)$ is the probability of the observed data, viewed as a function of the parameter.  For $N$ i.i.d. observations from $\mathcal{N}(\mu, \sigma^2)$,
+
+$$
+\ln \mathcal{L}(\mu) = -\frac{N}{2\sigma^2}(\bar{x} - \mu)^2 + \text{const},
+$$ {#eq-gaussian-logL}
+
+a parabola in $\mu$ with curvature $N/\sigma^2$.  The MLE is $\hat\mu = \bar x$, and the width of the likelihood encodes the uncertainty — as we will quantify next.
+
+:::
+
+---
+
+## Going deeper {#sec-fisher-deeper}
+
+::: {.callout-tip appearance="minimal" icon="false"}
+### Going deeper
+
+#### Fisher information
+
+The **Fisher information** $I(\theta)$ measures how much information the data carry about $\theta$:
+
+$$
+I(\theta) = \mathbb{E}\!\left[\left(\frac{\partial \ln p(X|\theta)}{\partial \theta}\right)^2\right]
+           = -\mathbb{E}\!\left[\frac{\partial^2 \ln p(X|\theta)}{\partial \theta^2}\right].
+$$ {#eq-fisher-information}
+
+The second form (valid under regularity conditions) is usually easier to compute: it is the expected curvature of the log-likelihood.  High curvature $\Leftrightarrow$ the data are sensitive to $\theta$ $\Leftrightarrow$ the parameter is well-determined.
+
+**Example (Gaussian, known $\sigma$):**  $\ln p(x|\mu) = -\frac{(x-\mu)^2}{2\sigma^2} + \text{const}$, so $\partial^2/\partial\mu^2 = -1/\sigma^2$ and
+
+$$
+I(\mu) = \frac{1}{\sigma^2}.
+$$ {#eq-fisher-gaussian}
+
+For $N$ i.i.d. samples, $I_N(\mu) = N/\sigma^2$ — information scales linearly with sample size.
+
+#### The Cramér–Rao bound
+
+For any **unbiased** estimator $\hat\theta$:
+
+$$
+\boxed{\operatorname{Var}(\hat\theta) \geq \frac{1}{I(\theta)}.}
+$$ {#eq-crb}
+
+This is the **Cramér–Rao bound (CRB)**.  No unbiased estimator can have variance below $1/I(\theta)$, regardless of how clever you are.  An estimator achieving equality is called **efficient**.
+
+The MLE $\hat\mu = \bar x$ for the Gaussian achieves $\operatorname{Var}(\hat\mu) = \sigma^2/N = 1/I_N$, so the sample mean is efficient.
+
+#### Why this matters for experiment design
+
+The CRB tells you the best you can ever do.  If your current estimator has $\operatorname{Var} \gg 1/I$, you are leaving information on the table — a better estimator or analysis exists.  If you are already at the CRB, buying more sensitivity requires collecting more data or reducing $\sigma$ (i.e., improving the apparatus).
+
+The ratio $e(\hat\theta) = 1 / [I(\theta)\,\operatorname{Var}(\hat\theta)] \in (0, 1]$ is the **efficiency**.  Designing an experiment means choosing the observable $X$ and the estimator $\hat\theta$ to maximise $I(\theta)$ for the quantity you care about.
+
+#### Profile likelihoods and nuisance parameters
+
+When the model has nuisance parameters $\bm{\eta}$ alongside the parameter of interest $\theta$, the **profile likelihood** is
+
+$$
+\mathcal{L}_P(\theta) = \max_{\bm{\eta}} \mathcal{L}(\theta, \bm{\eta}),
+$$
+
+obtained by fixing $\theta$ and maximising over $\bm{\eta}$.  Wilks' theorem states that $-2\Delta\ln\mathcal{L}_P$ is asymptotically $\chi^2$ distributed with one degree of freedom — enabling likelihood-ratio confidence intervals without knowing the distribution of $\hat\theta$ analytically.
+
+:::
+
+---
+
+## Reproducible figure: likelihood profile and the CRB {#sec-fisher-figure}
+
+The figure below is generated from simulated data by the Python script
+[`figures/src/likelihood_crb.py`](../../figures/src/likelihood_crb.py),
+using the dataset [`data/sample_calibration.csv`](../../data/sample_calibration.csv).
+Everything is reproducible: fixed seed, pinned dependencies, no manual steps.
+
+```{python}
+#| label: fig-likelihood-crb
+#| fig-cap: "Log-likelihood profile for the mean of $N=10$ Gaussian measurements (known $\\sigma=1$). The MLE $\\hat{\\mu}$ is marked; the green band is the Cramér–Rao bound $\\pm\\sqrt{\\sigma^2/N}$. The $\\Delta\\ln\\mathcal{L} = -\\tfrac{1}{2}$ line defines the 1$\\sigma$ confidence interval from the likelihood."
+#| echo: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+import pathlib
+
+rng = np.random.default_rng(seed=42)
+plt.rcParams.update({
+    "font.family": "serif", "font.size": 10,
+    "axes.spines.top": False, "axes.spines.right": False,
+})
+
+mu_true, sigma_known, N = 5.0, 1.0, 10
+data = rng.normal(mu_true, sigma_known, N)
+mu_hat = data.mean()
+
+mu_grid = np.linspace(2.5, 7.5, 500)
+log_L = np.array([-0.5 * np.sum(((data - mu) / sigma_known)**2) for mu in mu_grid])
+log_L -= log_L.max()
+
+crb_sigma = sigma_known / np.sqrt(N)
+
+fig, ax = plt.subplots(figsize=(6.0, 3.6))
+ax.plot(mu_grid, log_L, color="#1a4a7a",
+        label=r"$\ln \mathcal{L}(\mu;\,\mathbf{x})$")
+ax.axhline(-0.5, color="#1a4a7a", lw=0.8, ls="--", alpha=0.6)
+ax.text(7.4, -0.46, r"$\Delta\ln\mathcal{L} = -1/2$",
+        ha="right", fontsize=8, color="#555")
+ax.axvline(mu_hat, color="#c75000", lw=1.2, ls=":",
+           label=fr"MLE $\hat{{\mu}}={mu_hat:.2f}$")
+ax.axvspan(mu_hat - crb_sigma, mu_hat + crb_sigma, color="#2e7d32",
+           alpha=0.12,
+           label=fr"CRB: $\sigma_\mathrm{{CRB}}={crb_sigma:.3f}$")
+ax.axvline(mu_true, color="#888", lw=0.9, ls="-.",
+           label=fr"True $\mu_0={mu_true}$")
+ax.set_xlabel(r"$\mu$")
+ax.set_ylabel(r"Normalised $\ln\mathcal{L}$")
+ax.set_ylim(-3.5, 0.3)
+ax.legend(frameon=False, fontsize=8)
+plt.tight_layout()
+plt.show()
+```
+
+@fig-likelihood-crb demonstrates a key result: the width of the likelihood at the $\Delta\ln\mathcal{L}=-\frac{1}{2}$ level equals the CRB exactly for the Gaussian mean problem.  This is not a coincidence — it follows from @eq-gaussian-logL and @eq-crb.
+
+The $\chi^2$-fit-with-residuals companion figure (demonstrating the full weighted least-squares pipeline on real calibration data) will appear in Module M4.
+
+---
+
+## Bench {#sec-fisher-bench}
+
+::: {.callout-warning appearance="minimal" icon="false"}
+### Bench Notes for this module
+
+- [Fisher information & the Cramér–Rao bound on one page](../../bench-notes/exact-constraint-design.qmd) *(placeholder — CRB Bench Note to be added)*
+- [Reading a fit: residuals, chi-squared_red, and covariance](../../bench-notes/index.qmd)
+
+:::
+
+---
+
+## Key references {#sec-fisher-refs}
+
+::: {.callout-important appearance="minimal" icon="false"}
+### Key references
+
+- @cowan1998statistical — Chapter 6 (maximum likelihood) and Chapter 7 (least squares).
+- @kayEstimationTheory — the definitive graduate reference on Fisher information and the CRB.
+- @siviaSkilling2006 — Bayesian perspective and comparison with MLE.
+- @bevingtonRobinson2003 — practical worked examples with real datasets.
+- @jcgm2008gum — the metrological standard for uncertainty propagation.
+
+:::
+
+---
+
+## Exercises {#sec-fisher-exercises .unnumbered}
+
+1. For $N$ i.i.d. observations from a Poisson distribution $\text{Po}(\lambda)$, compute $I(\lambda)$ and verify that the sample mean achieves the CRB.
+2. Show that the biased estimator $\hat\sigma^2 = \frac{1}{N}\sum(x_i - \bar x)^2$ of the variance has lower MSE than the unbiased estimator $s^2 = \frac{1}{N-1}\sum(x_i-\bar x)^2$ when $N$ is small.  What does this tell you about the trade-off between bias and variance?
+3. Using the dataset in `data/sample_calibration.csv`, perform a weighted linear fit and verify that your parameter uncertainties saturate the CRB.  Plot the residuals.
+4. *(Going deeper)* Derive the profile likelihood for a linear model $y = a x + b$ when only $b$ is the parameter of interest and $a$ is a nuisance parameter.  Show that the resulting confidence interval on $b$ is wider than the naive interval that ignores $a$.

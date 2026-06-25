@@ -1,0 +1,54 @@
+# Third-party files fetched at build time
+csl/*.csl
+
+# Quarto build outputs
+_book/
+_freeze/
+.quarto/
+
+# Generated figures (regenerated at build)
+figures/*.pdf
+figures/*.png
+figures/*.svg
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb~
+
+# macOS
+.DS_Store
+.AppleDouble
+
+# LaTeX intermediates
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.idx
+*.ind
+*.ilg
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.tex           # only if Quarto-generated; don't ignore hand-written .tex
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*~
+
+/.quarto/
+**/*.quarto_ipynb

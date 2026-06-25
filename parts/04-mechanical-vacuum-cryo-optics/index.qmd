@@ -1,0 +1,19 @@
+---
+title: "Part IV — Mechanical, Vacuum, Cryogenics & Optics"
+---
+
+*The apparatus itself: how to design mechanisms that stay put, pump down to UHV, get cold, and point a laser where you want it.*
+
+| Module | Topic | Tier highlight |
+|--------|-------|---------------|
+| M18 | Precision mechanical design | Exact constraint / kinematic design |
+| M19 | Materials selection | Cryogenic property changes |
+| M20 | Manufacturing and tolerances | GD&T, tolerance stack-up |
+| M21 | Vibration isolation | Transmissibility and active isolation |
+| M22 | Vacuum technology | Pump types, CF flanges, leak detection |
+| M23 | Cryogenics | Dilution refrigerators, wiring heat loads |
+| M24 | Thermometry and temperature control | Cernox, 4-wire, PID coupling |
+| M25 | Optics and lasers | Two-mirror walk, Gaussian beams |
+| M26 | Magnetics | Superconducting magnets, quench |
+
+**Key references for Part IV:** @mooreDavisCoplan2009, @smithChetwynd1992, @slocum1992precision, @ohanlon2003vacuum, @pobell2007matter, @ekin2006experimental, @venturaRisegari2008.

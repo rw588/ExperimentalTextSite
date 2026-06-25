@@ -1,0 +1,8 @@
+---
+title: "Bibliography"
+---
+
+All references cited in this text, in alphabetical order by first author.
+
+::: {#refs}
+:::

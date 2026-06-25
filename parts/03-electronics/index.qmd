@@ -1,0 +1,16 @@
+---
+title: "Part III — Electronics"
+---
+
+*From real components through op-amp design, detectors, grounding, and feedback loops. The electronics that supports measurements, not consumer electronics.*
+
+| Module | Topic | Tier highlight |
+|--------|-------|---------------|
+| M12 | Real components | ESR, parasitic L, tempco |
+| M13 | Op-amps and analog design | Transimpedance amplifier |
+| M14 | Semiconductors and the band gap | Dark current activation energy |
+| M15 | Grounding, shielding, and EMI | Ground-loop forensics |
+| M16 | Feedback and control | PID, Pound–Drever–Hall |
+| M17 | Detectors | SNSPDs, NEP, D* |
+
+**Key references for Part III:** @horowitzHill2015, @ott2011noise, @morrison2016grounding.

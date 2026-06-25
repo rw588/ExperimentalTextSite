@@ -1,0 +1,130 @@
+---
+title: "Exact-constraint (kinematic) design"
+subtitle: "Constrain each degree of freedom exactly once — no more, no less"
+author: Robert Waddy
+date: last-modified
+categories: [mechanical, precision-design]
+bibliography: ../references.bib
+---
+
+::: {.bench-note-page}
+
+```{=html}
+<div style="display:flex; align-items:baseline; gap:0.6rem; margin-bottom:1rem;">
+  <span style="background:#a08030;color:#fff;font-size:0.75rem;font-weight:700;
+               letter-spacing:0.06em;padding:2px 8px;border-radius:3px;">
+    BENCH NOTE
+  </span>
+  <span style="color:#7a5c00;font-size:0.9rem;">
+    <em>Materials &amp; Mechanical &mdash; precision design</em>
+  </span>
+</div>
+```
+
+---
+
+## Concept {.bn-concept}
+
+<span class="bn-field-label">Concept</span>
+
+A rigid body in 3-D space has **6 degrees of freedom (DOF)**: 3 translational ($x, y, z$) and 3 rotational ($\theta_x, \theta_y, \theta_z$). An **exact-constraint** (kinematic) design removes each DOF with exactly one constraint — a point contact or line contact. Fewer constraints leave the body underdetermined (it can move); more constraints **over-constrain** it, creating indeterminate internal stresses that cause binding, hysteresis, and irreproducibility. Exact-constraint design is the reason a precision kinematic mount is reproducible to microns while a bolted joint is not.
+
+**Why it matters:** any mechanism that needs to be removed and replaced — a detector mount, a cryostat insert, a sample stage — should be kinematically designed so that reassembly returns the part to the same position. This is not achievable with over-constrained (e.g., flat-on-flat) contacts.
+
+---
+
+## Governing equations {.bn-equations}
+
+<span class="bn-field-label">Governing equations</span>
+
+**DOF count:**
+
+$$
+\text{DOF}_{\text{remaining}} = 6 - C,
+$$ {#eq-ec-dof}
+
+where $C$ is the number of independent point contacts (each removes 1 DOF, assuming the contact normals are linearly independent).  A fully constrained body has $C = 6$.
+
+**Contact stiffness (Hertz, sphere on flat):**
+
+$$
+k_\text{contact} = \frac{3}{2} F^{1/3} \left(\frac{4E^*}{3}\right)^{2/3},
+\qquad \frac{1}{E^*} = \frac{1-\nu_1^2}{E_1} + \frac{1-\nu_2^2}{E_2},
+$$ {#eq-ec-hertz}
+
+where $F$ is the preload force, $E_i$ and $\nu_i$ are Young's modulus and Poisson's ratio of each material.  Higher preload and stiffer materials increase contact stiffness.
+
+**Kelvin (three-groove) mount — contact geometry:**
+Three balls rest in three V-grooves; each ball–groove contact removes 2 DOF (for a total of 6). Groove axes should be directed toward the mount centroid.
+
+**Symbol table:**
+
+| Symbol | Meaning | Typical units |
+|--------|---------|--------------|
+| $C$ | Number of independent constraints | — |
+| $k$ | Contact stiffness | N/m |
+| $F$ | Preload (normal force at contact) | N |
+| $E^*$ | Combined elastic modulus | Pa |
+| $R$ | Ball radius | m |
+
+---
+
+## Decision rule / table {.bn-decision}
+
+<span class="bn-field-label">Decision rule</span>
+
+| Situation | Design choice |
+|-----------|--------------|
+| Need repeatable positioning ($< 5\,\mu$m) | Kinematic mount: 3 balls in 3 V-grooves (Kelvin) or 3 balls on flat/cone/groove (Maxwell) |
+| Need to carry load without position repeatability | Over-constraint acceptable — use bolted joints, clamps |
+| Need adjustable but repeatable position | Kinematic mount + fine-thread adjusters against a preloaded spring |
+| Only 1 or 2 DOF must be constrained | Constrain only those (e.g., a linear rail constrains 5 DOF, leaving 1 translational) |
+| Need thermal stability | Point contacts at the thermal center; see [The thermal center](index.qmd) Bench Note |
+| Over-constraint suspected (binding on re-insertion) | Count contacts; look for flat-on-flat or redundant bolt patterns; replace with a single point/line contact |
+
+**How many contacts do common designs give?**
+
+| Design | Contacts $C$ | DOF removed | Result |
+|--------|:---:|:---:|--------|
+| Flat on flat (3 bolts) | 3+ (redundant) | >6 | Over-constrained |
+| 3-ball + 3 V-groove (Kelvin) | 6 | 6 | Exact |
+| Ball + cone + groove + flat (Maxwell) | 6 | 6 | Exact |
+| 3-ball on flat (1 contact each) | 3 | 3 | Under-constrained (rotation remains) |
+| 3-ball on flat + 1 locating pin | 4 | 4 | Still under-constrained |
+
+---
+
+## Failure modes {.bn-failures}
+
+<span class="bn-field-label">Failure modes</span>
+
+| Symptom | Most likely cause | Fix |
+|---------|-----------------|-----|
+| Position shifts on re-seating | Contamination at contacts, or over-constraint causing inconsistent seating order | Clean contact surfaces; count DOF and remove redundant constraints |
+| Hysteresis under load | Over-constraint — part flexes elastically to seat, springs back | Remove redundant contact; use single-point contacts |
+| Binding or creaking on assembly | Over-constraint — internal stress builds as constraints engage | Re-design: replace a surface contact with a ball; reduce to exact $C = 6$ |
+| Resonance lower than expected | Insufficient preload (too low contact stiffness) | Increase spring preload; check @eq-ec-hertz |
+| Thermal shift on cool-down | Ball and groove materials with different CTE; or constraint asymmetry | Match CTE; design thermal center at measurement point |
+| Galling / cold-welding at contacts | Same metal on same metal (Al on Al, SS on SS) under high load | Use dissimilar hardness pairs (e.g. hardened steel ball on Al groove); see *Galling-prone material pairs* Bench Note |
+
+---
+
+## See also {.bn-seealso}
+
+<span class="bn-field-label">See also</span>
+
+- Module M18 (Precision mechanical design) — full treatment of DOF counting, kinematic vs. elastic-averaging, Abbe error, and flexures.
+- Bench Note: *The thermal center* — how to choose the constraint geometry so thermal expansion doesn't shift your measurement point.
+- Bench Note: *Flexure design primer* — when elastic-averaging is preferable to exact-constraint.
+- Bench Note: *Curing over-constraint* — diagnostic procedure for a binding mechanism.
+- JPE *Precision Point* notes — the industrial series this format is modelled on; many kinematic design examples.
+
+---
+
+## References {.bn-refs}
+
+<span class="bn-field-label">References</span>
+
+[@smithChetwynd1992; @slocum1992precision; @mooreDavisCoplan2009]
+
+:::

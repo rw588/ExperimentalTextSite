@@ -1,0 +1,12 @@
+---
+title: "Part V — Practice & Craft"
+---
+
+*The tacit knowledge that no datasheet contains: soldering, material compatibility, systematic safety, and the lab habits that separate reproducible science from guesswork.*
+
+| Module | Topic | Tier highlight |
+|--------|-------|---------------|
+| M27 | Soldering and interconnect | Alloy selection, cryo-compatible joints |
+| M28 | Chemicals and materials compatibility | Solvent vs. plastics, Stycast |
+| M29 | Safety, comprehensively | Electrical, laser, cryo, vacuum, chemical, RF |
+| M30 | Lab craft — the meta-skills | Notebook standard, debugging methodology |

@@ -1,0 +1,140 @@
+/*-- scss:defaults --*/
+
+// Typography
+$font-family-sans-serif: "Source Sans Pro", system-ui, -apple-system, sans-serif;
+$font-family-monospace: "JetBrains Mono", "Fira Code", monospace;
+$font-size-base: 1.05rem;
+
+// Colours (light mode)
+$primary: #1a4a7a;
+$link-color: #1a4a7a;
+$code-bg: #f4f6f8;
+$callout-color-tip: #2e7d32;
+$callout-color-warning: #c75000;
+
+/*-- scss:rules --*/
+
+// ── Bench Note cards ──────────────────────────────────────────────────────
+
+.bench-note {
+  background: #f9f7f0;
+  border: 2px solid #c8b87a;
+  border-left: 6px solid #a08030;
+  border-radius: 6px;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  font-size: 0.97rem;
+
+  h2 {
+    color: #5a3e00;
+    font-size: 1.2rem;
+    margin-top: 0;
+    border-bottom: 1px solid #c8b87a;
+    padding-bottom: 0.4rem;
+  }
+
+  .bn-field {
+    margin-bottom: 1rem;
+
+    .bn-label {
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #7a5c00;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  table {
+    font-size: 0.9rem;
+    width: 100%;
+  }
+}
+
+// ── Depth-ladder callouts ──────────────────────────────────────────────────
+
+.callout.callout-core {
+  border-left-color: #1a4a7a;
+  .callout-title-container { color: #1a4a7a; }
+}
+
+.callout.callout-deeper {
+  border-left-color: #5b267b;
+  .callout-title-container { color: #5b267b; }
+}
+
+.callout.callout-bench {
+  border-left-color: #a08030;
+  .callout-title-container { color: #a08030; }
+}
+
+.callout.callout-refs {
+  border-left-color: #2e7d32;
+  .callout-title-container { color: #2e7d32; }
+}
+
+// ── Chapter header extras ─────────────────────────────────────────────────
+
+.chapter-header-meta {
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.75rem;
+}
+
+// ── Figure captions ───────────────────────────────────────────────────────
+
+figcaption {
+  font-size: 0.88rem;
+  color: #555;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+// ── Code cells ────────────────────────────────────────────────────────────
+
+.cell-output-display figure {
+  margin: 1rem auto;
+  text-align: center;
+}
+
+// ── Bench Notes listing page ──────────────────────────────────────────────
+
+.bn-listing {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+
+  a.bn-card {
+    display: block;
+    background: #f9f7f0;
+    border: 1.5px solid #c8b87a;
+    border-left: 5px solid #a08030;
+    border-radius: 5px;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.95rem;
+    transition: box-shadow 0.15s;
+
+    &:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      text-decoration: none;
+    }
+
+    .bn-card-title {
+      font-weight: 600;
+      color: #1a4a7a;
+    }
+
+    .bn-card-topic {
+      font-size: 0.82rem;
+      color: #7a5c00;
+      margin-top: 0.2rem;
+    }
+  }
+}

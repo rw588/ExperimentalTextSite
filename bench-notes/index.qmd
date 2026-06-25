@@ -1,0 +1,152 @@
+---
+title: "Bench Notes"
+subtitle: "Dense single-topic reference cards — the *Precision Point* series"
+---
+
+The Bench Notes are short, self-contained reference cards. Each covers **one topic**: the governing concept, the key equations, a decision rule or table, and the failure modes. They are designed to be raided during lab work, not read sequentially.
+
+Cross-referenced from the Core chapters, but they stand alone.
+
+---
+
+## Uncertainty & data {.unnumbered}
+
+```{=html}
+<div class="bn-listing">
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">Distribution chooser</div>
+    <div class="bn-card-topic">Uncertainty &mdash; probability</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">Error-budget template</div>
+    <div class="bn-card-topic">Uncertainty &mdash; systematics</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">Fisher information &amp; CRB on one page</div>
+    <div class="bn-card-topic">Uncertainty &mdash; estimation</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">Reading a fit: residuals, χ²_red, covariance</div>
+    <div class="bn-card-topic">Uncertainty &mdash; fitting</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">Systematic-hunting checklist</div>
+    <div class="bn-card-topic">Uncertainty &mdash; systematics</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">Blind-analysis playbook</div>
+    <div class="bn-card-topic">Uncertainty &mdash; bias control</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+</div>
+```
+
+---
+
+## Signal & noise {.unnumbered}
+
+```{=html}
+<div class="bn-listing">
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">Noise-source cheat sheet</div>
+    <div class="bn-card-topic">Signal/noise &mdash; physics</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">Reading a PSD</div>
+    <div class="bn-card-topic">Signal/noise &mdash; spectral estimation</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">Allan deviation interpretation</div>
+    <div class="bn-card-topic">Signal/noise &mdash; stability</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">Filter selection table</div>
+    <div class="bn-card-topic">Signal/noise &mdash; filtering</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">Lock-in setup checklist</div>
+    <div class="bn-card-topic">Signal/noise &mdash; detection</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">Grounding topologies</div>
+    <div class="bn-card-topic">Signal/noise &mdash; EMI</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+</div>
+```
+
+---
+
+## Materials & mechanical {.unnumbered}
+
+```{=html}
+<div class="bn-listing">
+  <a href="exact-constraint-design.qmd" class="bn-card">
+    <div class="bn-card-title">Exact-constraint (kinematic) design</div>
+    <div class="bn-card-topic">Mechanical &mdash; precision design</div>
+  </a>
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">The thermal center</div>
+    <div class="bn-card-topic">Mechanical &mdash; thermal design</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">Metals comparison table</div>
+    <div class="bn-card-topic">Materials &mdash; selection</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">Pump selector by pressure</div>
+    <div class="bn-card-topic">Vacuum &mdash; pumping</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">Cryogen safety</div>
+    <div class="bn-card-topic">Cryogenics &mdash; safety</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+</div>
+```
+
+---
+
+## Craft {.unnumbered}
+
+```{=html}
+<div class="bn-listing">
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">Solder alloy selection table</div>
+    <div class="bn-card-topic">Craft &mdash; soldering</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">Acetone vs. plastics table</div>
+    <div class="bn-card-topic">Craft &mdash; materials compatibility</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">Troubleshooting decision tree</div>
+    <div class="bn-card-topic">Craft &mdash; debugging</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+    <div class="bn-card-title">Hazard quick-reference</div>
+    <div class="bn-card-topic">Craft &mdash; safety</div>
+    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
+  </span>
+</div>
+```
+
+---
+
+*To add a Bench Note, copy [`_template.qmd`](_template.qmd), fill in the fixed fields, and add a link in this listing. See `CONTRIBUTING.md` for the full workflow.*

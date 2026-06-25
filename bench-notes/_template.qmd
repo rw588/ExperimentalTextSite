@@ -1,0 +1,92 @@
+---
+# BENCH NOTE TEMPLATE — copy, rename, fill in.  Remove this comment block.
+# Filename:  bench-notes/<slug>.qmd
+# The title should be short — it appears in card listings.
+title: "<Bench Note title — one topic>"
+subtitle: "<One-sentence scope statement>"
+author: Robert Waddy
+date: last-modified
+categories: [<thread>, <sub-topic>]   # e.g. [uncertainty, fitting]
+bibliography: ../references.bib
+---
+
+::: {.bench-note-page}
+
+```{=html}
+<div style="display:flex; align-items:baseline; gap:0.6rem; margin-bottom:1rem;">
+  <span style="background:#a08030;color:#fff;font-size:0.75rem;font-weight:700;
+               letter-spacing:0.06em;padding:2px 8px;border-radius:3px;">
+    BENCH NOTE
+  </span>
+  <span style="color:#7a5c00;font-size:0.9rem;"><em><Thread> &mdash; <sub-topic></em></span>
+</div>
+```
+
+---
+
+## Concept {.bn-concept}
+
+<span class="bn-field-label">Concept</span>
+
+*One paragraph: what is this and why does it matter experimentally?*
+
+---
+
+## Governing equations {.bn-equations}
+
+<span class="bn-field-label">Governing equations</span>
+
+$$
+<\text{key equation 1}>
+$$ {#eq-bn-<slug>-1}
+
+$$
+<\text{key equation 2}>
+$$ {#eq-bn-<slug>-2}
+
+**Symbol table:**
+
+| Symbol | Meaning | Typical units |
+|--------|---------|--------------|
+| $<x>$ | <description> | <units> |
+
+---
+
+## Decision rule / table {.bn-decision}
+
+<span class="bn-field-label">Decision rule</span>
+
+| Situation | Recommendation |
+|-----------|---------------|
+| <case 1> | <action 1> |
+| <case 2> | <action 2> |
+
+---
+
+## Failure modes {.bn-failures}
+
+<span class="bn-field-label">Failure modes</span>
+
+| Symptom | Most likely cause | Fix |
+|---------|------------------|-----|
+| <symptom 1> | <cause> | <fix> |
+| <symptom 2> | <cause> | <fix> |
+
+---
+
+## See also {.bn-seealso}
+
+<span class="bn-field-label">See also</span>
+
+- Module @sec-<related-module> (<Module title>)
+- Bench Note: [<related bench note>](<slug>.qmd)
+
+---
+
+## References {.bn-refs}
+
+<span class="bn-field-label">References</span>
+
+[@<key>; @<key2>]
+
+:::

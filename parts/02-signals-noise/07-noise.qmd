@@ -1,0 +1,206 @@
+---
+title: "M7. The physics of noise"
+subtitle: "Johnson–Nyquist, shot noise, 1/f, and the fluctuation–dissipation theorem"
+author: Robert Waddy
+date: last-modified
+bibliography: ../../references.bib
+---
+
+```{=html}
+<div class="chapter-header-meta">
+  <strong>Part II — Signals &amp; Noise</strong> &middot; Module M7
+  &middot; Prerequisite: statistical mechanics (equipartition), M1–M2
+</div>
+```
+
+*Noise is not a nuisance — it is physics. Every irreducible noise source has a microscopic origin, and understanding it tells you whether you can fight it (shielding, filtering, cooling) or whether you are already at the fundamental limit. This module catalogues the major sources and gives you the formulae to budget them.*
+
+---
+
+## Core {#sec-noise-core}
+
+::: {.callout-note appearance="minimal" icon="false"}
+### Core
+
+#### Johnson–Nyquist (thermal) noise
+
+Any resistor $R$ at temperature $T$ generates a voltage noise
+
+$$
+S_V(f) = 4 k_B T R \quad \left[\mathrm{V}^2\,\mathrm{Hz}^{-1}\right],
+$$ {#eq-johnson-voltage}
+
+white (frequency-independent) up to $f \sim k_BT/h \approx \SI{6}{\tera\hertz}$ at room temperature — well beyond any electronics.  The equivalent current noise is
+
+$$
+S_I(f) = \frac{4 k_B T}{R} = 4 k_B T G \quad \left[\mathrm{A}^2\,\mathrm{Hz}^{-1}\right].
+$$ {#eq-johnson-current}
+
+**Rule of thumb:** a $\SI{1}{\kilo\ohm}$ resistor at 300 K produces $\sqrt{S_V} \approx \SI{4}{\nano\volt\per\sqrt{\hertz}}$.
+
+To reduce thermal noise: cool the resistor, reduce $R$, or narrow the measurement bandwidth $\Delta f$.
+
+#### Shot noise
+
+Any process that counts discrete carriers (electrons, photons) generates **shot noise**:
+
+$$
+S_I(f) = 2 q I \quad \left[\mathrm{A}^2\,\mathrm{Hz}^{-1}\right],
+$$ {#eq-shot}
+
+where $q$ is the carrier charge and $I$ is the mean current.  Shot noise is white and irreducible — it reflects the discreteness of charge.
+
+**Photon shot noise:** for a photodetector with mean photocurrent $I_{ph}$, the photon shot noise is $S_I = 2eI_{ph}$.
+
+#### 1/f (flicker) noise
+
+At low frequencies, most devices exhibit $S(f) \propto 1/f^\alpha$ (with $\alpha \approx 1$).  Origin varies by device (carrier trapping in semiconductors, contact resistance fluctuations, ...) but the practical consequence is universal:
+
+> **Measuring at DC is almost always a mistake.** Modulating the signal to a higher frequency (with a chopper, lock-in amplifier, etc.) moves it out of the 1/f regime.
+
+The corner frequency $f_c$ where $1/f$ noise equals white noise is device-dependent.  For a typical low-noise op-amp $f_c \sim \SIrange{10}{100}{\hertz}$.
+
+#### Noise temperature and noise figure
+
+A two-port amplifier with voltage gain $G$ adds its own noise.  The **noise temperature** $T_n$ is defined so that the output noise is equivalent to what a noiseless amplifier would produce with an input resistor at $T_n$:
+
+$$
+V_{n,\text{out}}^2 = G\,(4k_BT_n R_s)\,\Delta f.
+$$
+
+The **noise figure** $F = 10\log_{10}(1 + T_n/T_0)$ in dB (with $T_0 = \SI{290}{\kelvin}$ by convention) is how amplifiers are specified.  Lower is better; a perfect amplifier has $F = 0\,\text{dB}$.
+
+#### Adding noise sources
+
+Independent noise sources add in quadrature (power):
+
+$$
+S_{\text{total}} = S_1 + S_2 + S_3 + \cdots.
+$$
+
+The source with the largest $S_i$ dominates.  Build an **error budget**: list every noise source, compute its PSD contribution, and identify the dominant term.  Then attack that term first.
+
+:::
+
+---
+
+## Going deeper {#sec-noise-deeper}
+
+::: {.callout-tip appearance="minimal" icon="false"}
+### Going deeper
+
+#### The fluctuation–dissipation theorem
+
+Johnson–Nyquist noise is a special case of the **fluctuation–dissipation theorem** (FDT):
+
+$$
+S_{FF}(\omega) = 2 k_B T \operatorname{Re}[Y(\omega)],
+$$
+
+where $S_{FF}$ is the one-sided PSD of the force (or generalised force) and $Y(\omega)$ is the admittance (or dissipative part of the response function).  The FDT unifies thermal noise in resistors ($Y = G = 1/R$), mechanical oscillators (viscous damping), and optical cavities (photon loss rate) under one statement:
+
+> **Any dissipation implies noise.**
+
+Corollaries:
+- You cannot build a lossless filter and remove thermal noise: a lossy filter adds noise equal to what it attenuates.
+- To reduce thermal noise in a mechanical system, reduce damping *or* cool the device.
+
+#### Quantum noise and the standard quantum limit
+
+At low enough noise temperatures, quantum zero-point fluctuations contribute.  The full quantum FDT replaces $k_BT$ with $\frac{\hbar\omega}{2}\coth\!\left(\frac{\hbar\omega}{2k_BT}\right)$.  For a harmonic oscillator measured by a phase-preserving amplifier:
+
+$$
+\operatorname{Var}(x)\,\operatorname{Var}(p) \geq \frac{\hbar^2}{4},
+$$
+
+which translates to the **standard quantum limit (SQL)** on position measurement.  Squeezing allows trading noise in one quadrature for the other.
+
+#### Noise in amplifier chains (Friis formula)
+
+For a cascade of $n$ amplifiers with gains $G_1, G_2, \ldots$ and noise figures $F_1, F_2, \ldots$:
+
+$$
+F_{\text{total}} = F_1 + \frac{F_2 - 1}{G_1} + \frac{F_3 - 1}{G_1 G_2} + \cdots
+$$ {#eq-friis}
+
+**Implication:** put your lowest-noise, highest-gain stage first.  The first amplifier dominates the total noise figure; subsequent stages are suppressed by accumulated gain.
+
+:::
+
+---
+
+## Reproducible figure: noise PSD schematic {#sec-noise-figure}
+
+::: {.callout-note appearance="minimal" icon="false"}
+**Placeholder figure** — the production PSD figure will be added in the first content pass.
+Replace the code cell below with a figure generated by `figures/src/noise_psd.py`
+(not yet written) reading `data/` and following the same pattern as
+[`figures/src/chi2_fit_residuals.py`](../../figures/src/chi2_fit_residuals.py).
+:::
+
+```{python}
+#| label: fig-noise-psd
+#| fig-cap: "Schematic PSD illustrating Johnson noise (white floor), $1/f$ noise (rising toward DC), and the corner frequency $f_c$. A real measurement bandwidth $\\Delta f$ is indicated. (Illustrative; generated from analytical expressions.)"
+#| echo: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+plt.rcParams.update({
+    "font.family": "serif", "font.size": 10,
+    "axes.spines.top": False, "axes.spines.right": False,
+})
+
+f = np.logspace(-1, 5, 500)
+S_white = np.ones_like(f)           # Johnson noise floor (normalised)
+f_c = 1e2                            # corner frequency (Hz)
+S_flicker = f_c / f                  # 1/f component
+S_total = S_white + S_flicker
+
+fig, ax = plt.subplots(figsize=(5.5, 3.4))
+ax.loglog(f, S_total, color="#1a4a7a", lw=1.8, label=r"$S_\mathrm{total}$")
+ax.loglog(f, S_white, color="#2e7d32", lw=1.0, ls="--", label="White (Johnson)")
+ax.loglog(f, S_flicker, color="#c75000", lw=1.0, ls="--", label=r"$1/f$ (flicker)")
+ax.axvline(f_c, color="#888", lw=0.8, ls=":", label=fr"$f_c = {f_c:.0f}$ Hz")
+ax.set_xlabel(r"Frequency $f$ (Hz)")
+ax.set_ylabel(r"$S_V(f)$ (normalised)")
+ax.legend(frameon=False, fontsize=8)
+ax.set_title("Schematic noise PSD: white + 1/f", fontsize=9)
+plt.tight_layout()
+plt.show()
+```
+
+---
+
+## Bench {#sec-noise-bench}
+
+::: {.callout-warning appearance="minimal" icon="false"}
+### Bench Notes for this module
+
+- Noise-source cheat sheet (formulae + spectra) *(to be written)*
+- [Reading a PSD](../../bench-notes/index.qmd) *(to be written)*
+- [Lock-in setup checklist](../../bench-notes/index.qmd) *(to be written — see Module M10)*
+
+:::
+
+---
+
+## Key references {#sec-noise-refs}
+
+::: {.callout-important appearance="minimal" icon="false"}
+### Key references
+
+- @ott2011noise — the standard practical reference; Chapters 2–5 cover Johnson, shot, and 1/f noise in depth.
+- @horowitzHill2015 — Chapter 8 (low-noise techniques) and Appendix E (noise primer).
+- @mooreDavisCoplan2009 — Chapter 7 (signal conditioning and noise).
+
+:::
+
+---
+
+## Exercises {#sec-noise-exercises .unnumbered}
+
+1. A $\SI{10}{\kilo\ohm}$ resistor at room temperature ($T = \SI{300}{\kelvin}$) is in the input circuit of an amplifier with bandwidth $\Delta f = \SI{10}{\kilo\hertz}$.  Compute the rms Johnson noise voltage and compare it to the shot noise from a $\SI{1}{\micro\ampere}$ current flowing through the same circuit.
+2. Sketch the total noise PSD of a $\SI{1}{\kilo\ohm}$ resistor with $1/f$ corner frequency $f_c = \SI{100}{\hertz}$.  At what frequency does shot noise from a $\SI{10}{\nano\ampere}$ current equal the Johnson noise?
+3. *(Going deeper)* Use the Friis formula (@eq-friis) to design a two-stage amplifier chain with a total noise figure below $\SI{1}{\deci\bel}$, given that the available amplifiers have $F_1 = \SI{0.5}{\deci\bel}, G_1 = 20\,\text{dB}$ and $F_2 = \SI{3}{\deci\bel}, G_2 = 20\,\text{dB}$.  Does the ordering of stages matter?
+4. Explain in one paragraph why the fluctuation–dissipation theorem implies that a lossy bandpass filter cannot reduce the total thermal noise power in the passband below $k_B T \Delta f$.

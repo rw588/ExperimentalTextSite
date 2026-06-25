@@ -1,0 +1,15 @@
+---
+title: "Part II — Signals & Noise"
+---
+
+*The second thread: every experiment competes against noise. This part develops the physics of noise sources, the mathematics of spectral analysis, and the engineering of detection and filtering.*
+
+| Module | Topic | Tier highlight |
+|--------|-------|---------------|
+| **M7** | **The physics of noise** | **Fluctuation–dissipation theorem** |
+| M8 | Fourier analysis, sampling, spectral estimation | Allan deviation |
+| M9 | Filtering, analog and digital | Matched filtering |
+| M10 | Phase-sensitive detection (lock-in amplifiers) | Modulation schemes |
+| M11 | Data acquisition | ADC architectures |
+
+**Key references for Part II:** @horowitzHill2015, @ott2011noise.

@@ -1,0 +1,33 @@
+/* Additional CSS for Bench Notes — loaded alongside custom.scss */
+
+.bench-note-page {
+  max-width: 820px;
+}
+
+/* Fixed fields within a Bench Note */
+.bench-note-page .bn-concept,
+.bench-note-page .bn-equations,
+.bench-note-page .bn-decision,
+.bench-note-page .bn-failures,
+.bench-note-page .bn-seealso,
+.bench-note-page .bn-refs {
+  margin-bottom: 1.4rem;
+}
+
+.bench-note-page .bn-field-label {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #fff;
+  background: #a08030;
+  border-radius: 3px;
+  padding: 1px 8px;
+  margin-bottom: 0.4rem;
+}
+
+/* Print: keep the bench-note on one or two pages if possible */
+@media print {
+  .bench-note-page { page-break-inside: avoid; }
+}

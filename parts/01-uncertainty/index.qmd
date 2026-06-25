@@ -1,0 +1,16 @@
+---
+title: "Part I — Measurement & Uncertainty"
+---
+
+*The first thread: every number you report carries an error bar, and that error bar must be earned — not guessed, not inherited from convention. This part builds the full machinery, from probability basics through Bayesian inference.*
+
+| Module | Topic | Tier highlight |
+|--------|-------|---------------|
+| M1 | Probability and statistics, from scratch | CLT and its limits |
+| M2 | Error propagation and the covariance matrix | Correlated errors |
+| **M3** | **Estimation theory: least squares, MLE, Fisher information** | **Cramér–Rao bound** |
+| M4 | Model fitting and goodness of fit | $\chi^2$ and residuals |
+| M5 | Systematic errors and the error budget | Pull distributions |
+| M6 | Bayesian methods, sampling, and avoiding self-deception | Blind analysis |
+
+**Key references for Part I:** @cowan1998statistical, @siviaSkilling2006, @hughesHase2010, @taylor1997introduction, @bevingtonRobinson2003, @jcgm2008gum.

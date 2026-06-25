@@ -1,0 +1,35 @@
+---
+title: "Capstone Case Studies"
+---
+
+Three cross-cutting case studies integrate threads from Parts I–V onto a single real subsystem. Each capstone is a worked example, not a tutorial — it assumes the Core of the referenced modules.
+
+---
+
+## CS-A — Temperature-stabilised photodiode readout {.unnumbered}
+
+*How do you measure a weak optical signal at the statistical limit when 1/f noise and temperature drift conspire against you?*
+
+**Thread:** Detector (M17) → transimpedance amp + noise budget (M13) → grounding/shielding (M15) → PID temperature lock (M16, M24) → noise spectrum, PSD, Allan deviation (M7–M8) → fit and error budget (M2–M5).
+
+*Content to be written.*
+
+---
+
+## CS-B — A vibration-isolated, cryogenic optical setup {.unnumbered}
+
+*Putting a Gaussian beam into a cryostat and keeping it there.*
+
+**Thread:** Kinematic/exact-constraint design (M18) → materials and contraction (M19) → vacuum and cryo wiring (M22–M23) → vibration isolation (M21) → laser alignment and fiber coupling (M25) → measured stability vs. predicted budget.
+
+*Content to be written.*
+
+---
+
+## CS-C — Measuring a small DC quantity at the statistical limit {.unnumbered}
+
+*The complete cycle from experiment design to result, constrained by the Cramér–Rao bound.*
+
+**Thread:** Modulation + lock-in (M10) → estimator design at the CRB (M3) → blind analysis (M6) → systematic budget (M5).
+
+*Content to be written.*

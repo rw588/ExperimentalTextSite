@@ -1,0 +1,111 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Experimental Physics: Methods, Measurement, and Apparatus"
+  subtitle: "A course and reference for advanced undergraduates, MSc, and PhD students"
+  author:
+    - name: Robert Waddy
+      affiliation: ETH Zürich
+      email: rwaddy@ethz.ch
+  date: last-modified
+  date-format: "MMMM YYYY"
+  repo-url: https://github.com/rwaddy/experimental-physics-text
+  repo-actions: [edit, issue]
+  downloads: [pdf]
+  search: true
+  navbar:
+    background: dark
+  sidebar:
+    style: docked
+    background: light
+
+  chapters:
+    - index.qmd
+    - part: "Part I — Measurement & Uncertainty"
+      chapters:
+        - parts/01-uncertainty/index.qmd
+        - parts/01-uncertainty/03-estimation-fisher.qmd
+    - part: "Part II — Signals & Noise"
+      chapters:
+        - parts/02-signals-noise/index.qmd
+        - parts/02-signals-noise/07-noise.qmd
+    - part: "Part III — Electronics"
+      chapters:
+        - parts/03-electronics/index.qmd
+    - part: "Part IV — Mechanical, Vacuum, Cryogenics, Optics"
+      chapters:
+        - parts/04-mechanical-vacuum-cryo-optics/index.qmd
+    - part: "Part V — Practice & Craft"
+      chapters:
+        - parts/05-practice-craft/index.qmd
+    - part: "Bench Notes"
+      chapters:
+        - bench-notes/index.qmd
+        - bench-notes/exact-constraint-design.qmd
+    - references.qmd
+
+bibliography: references.bib
+csl: csl/american-physics-society.csl
+
+crossref:
+  fig-title: Figure
+  tbl-title: Table
+  eq-prefix: Eq.
+  sec-prefix: §
+  chapters: true
+
+format:
+  html:
+    theme:
+      light: [cosmo, styles/custom.scss]
+      dark: [solar, styles/custom.scss]
+    code-fold: true
+    code-tools: true
+    code-link: true
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    number-depth: 3
+    smooth-scroll: true
+    anchor-sections: true
+    link-external-newwindow: true
+    html-math-method: mathjax
+    fig-align: center
+    fig-responsive: true
+    citations-hover: true
+    footnotes-hover: true
+    css: styles/bench-notes.css
+
+  pdf:
+    pdf-engine: pdflatex
+    documentclass: book
+    papersize: a4
+    fontsize: 11pt
+    linestretch: 1.15
+    geometry: margin=25mm,bindingoffset=10mm
+    number-sections: true
+    toc: true
+    toc-depth: 3
+    lof: true
+    lot: true
+    include-in-header: styles/preamble.tex
+    keep-tex: false
+    fig-align: center
+    cite-method: biblatex
+    biblio-style: phys
+    colorlinks: true
+    linkcolor: NavyBlue
+    citecolor: NavyBlue
+    urlcolor: NavyBlue
+
+execute:
+  freeze: auto
+  cache: true
+  echo: true
+  warning: false
+  message: false
+  fig-width: 6.5
+  fig-height: 4.0
+  fig-dpi: 150

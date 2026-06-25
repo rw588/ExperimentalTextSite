@@ -1,0 +1,87 @@
+%% LaTeX preamble — loaded only for PDF output
+%% (HTML uses styles/custom.scss instead)
+
+%% ── Fonts ──────────────────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}    % UTF-8 input for pdflatex
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}           % fallback; override below if desired
+% \usepackage{newtxtext,newtxmath}   % Times-like; uncomment for a more traditional look
+% \usepackage{stix2}                  % alternative math font
+
+%% ── Page geometry tweaks ───────────────────────────────────────────────────
+\usepackage{microtype}         % better microtypography
+
+%% ── Maths extras ───────────────────────────────────────────────────────────
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{bm}                % bold math (\bm for bold Greek)
+\usepackage{siunitx}           % \SI, \si, \num — handle units properly
+\sisetup{
+  separate-uncertainty = true,
+  uncertainty-mode = compact,
+  range-phrase = \text{--},
+}
+
+%% ── Tables ─────────────────────────────────────────────────────────────────
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}         % cross-page tables (Quarto uses these)
+\usepackage{multirow}
+
+%% ── Figures ─────────────────────────────────────────────────────────────────
+\usepackage{graphicx}
+\usepackage{float}
+
+%% ── Colour ──────────────────────────────────────────────────────────────────
+\usepackage[dvipsnames,svgnames]{xcolor}
+\definecolor{NavyBlue}{RGB}{26,74,122}
+\definecolor{BenchGold}{RGB}{160,128,48}
+\definecolor{DeepPurple}{RGB}{91,38,123}
+
+%% ── Bench Note box environment ─────────────────────────────────────────────
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+
+\newtcolorbox{benchnotebox}[1][]{
+  enhanced,
+  breakable,
+  title=#1,
+  colframe=BenchGold,
+  colback=yellow!5!white,
+  coltitle=black,
+  fonttitle=\bfseries\sffamily,
+  attach boxed title to top left={yshift=-2mm, xshift=6mm},
+  boxed title style={colback=BenchGold, colframe=BenchGold!80!black},
+  left=6pt, right=6pt, top=8pt, bottom=6pt,
+}
+
+%% ── Depth-ladder callouts → PDF ────────────────────────────────────────────
+%% Quarto maps ::: {.callout-note} → tcolorbox; these tweak the palette.
+\usepackage{mdframed}
+
+%% ── Index ───────────────────────────────────────────────────────────────────
+\usepackage{makeidx}
+\makeindex
+
+%% ── Headers / chapter style ────────────────────────────────────────────────
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\leftmark}
+\fancyhead[RO]{\small\rightmark}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+%% ── Hyperref (Quarto sets this; these just tune colours) ───────────────────
+%% Do NOT re-load hyperref — Quarto already does.
+\AtBeginDocument{%
+  \hypersetup{
+    linkcolor=NavyBlue,
+    citecolor=NavyBlue,
+    urlcolor=NavyBlue,
+  }%
+}
+
+%% ── Misc ────────────────────────────────────────────────────────────────────
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=2pt}
+\setlist[enumerate]{noitemsep, topsep=2pt}
