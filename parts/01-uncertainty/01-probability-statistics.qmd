@@ -1,0 +1,27 @@
+---
+title: "M1. Probability and statistics, from scratch"
+---
+
+::: {.callout-note appearance="simple" icon="false"}
+## Core
+
+*Content to be written.*
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Going deeper
+
+*Content to be written.*
+:::
+
+::: {.callout-warning appearance="simple" icon="false"}
+## Bench
+
+*Bench Note cross-references to be added.*
+:::
+
+::: {.callout-important appearance="simple" icon="false"}
+## Key references
+
+@cowan1998statistical; @barlow1989statistics
+:::

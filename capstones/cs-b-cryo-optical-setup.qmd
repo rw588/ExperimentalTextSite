@@ -1,0 +1,19 @@
+---
+title: "CS-B: Vibration-isolated cryogenic optical setup"
+---
+
+> **Thread:** Kinematic/exact-constraint design (M18) --> materials and contraction (M19) --> vacuum and cryo wiring (M22-M23) --> vibration isolation (M21) --> laser alignment and fiber coupling (M25) --> measured stability vs. predicted budget.
+
+*Content to be written.*
+
+## Subsystem overview
+
+*To be written.*
+
+## Design walkthrough
+
+*To be written.*
+
+## Measured performance vs. budget
+
+*To be written.*

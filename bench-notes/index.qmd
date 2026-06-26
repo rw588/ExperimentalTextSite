@@ -13,36 +13,30 @@ Cross-referenced from the Core chapters, but they stand alone.
 
 ```{=html}
 <div class="bn-listing">
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+  <a href="distribution-chooser.qmd" class="bn-card">
     <div class="bn-card-title">Distribution chooser</div>
     <div class="bn-card-topic">Uncertainty &mdash; probability</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+  </a>
+  <a href="error-budget-template.qmd" class="bn-card">
     <div class="bn-card-title">Error-budget template</div>
     <div class="bn-card-topic">Uncertainty &mdash; systematics</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+  </a>
+  <a href="fisher-crb.qmd" class="bn-card">
     <div class="bn-card-title">Fisher information &amp; CRB on one page</div>
     <div class="bn-card-topic">Uncertainty &mdash; estimation</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
-    <div class="bn-card-title">Reading a fit: residuals, χ²_red, covariance</div>
+  </a>
+  <a href="reading-a-fit.qmd" class="bn-card">
+    <div class="bn-card-title">Reading a fit: residuals, &chi;&sup2;, covariance</div>
     <div class="bn-card-topic">Uncertainty &mdash; fitting</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+  </a>
+  <a href="systematic-hunting.qmd" class="bn-card">
     <div class="bn-card-title">Systematic-hunting checklist</div>
     <div class="bn-card-topic">Uncertainty &mdash; systematics</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+  </a>
+  <a href="blind-analysis.qmd" class="bn-card">
     <div class="bn-card-title">Blind-analysis playbook</div>
     <div class="bn-card-topic">Uncertainty &mdash; bias control</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
+  </a>
 </div>
 ```
 
@@ -52,36 +46,54 @@ Cross-referenced from the Core chapters, but they stand alone.
 
 ```{=html}
 <div class="bn-listing">
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+  <a href="noise-source-cheatsheet.qmd" class="bn-card">
     <div class="bn-card-title">Noise-source cheat sheet</div>
     <div class="bn-card-topic">Signal/noise &mdash; physics</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+  </a>
+  <a href="reading-a-psd.qmd" class="bn-card">
     <div class="bn-card-title">Reading a PSD</div>
     <div class="bn-card-topic">Signal/noise &mdash; spectral estimation</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+  </a>
+  <a href="allan-deviation.qmd" class="bn-card">
     <div class="bn-card-title">Allan deviation interpretation</div>
     <div class="bn-card-topic">Signal/noise &mdash; stability</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+  </a>
+  <a href="filter-selection.qmd" class="bn-card">
     <div class="bn-card-title">Filter selection table</div>
     <div class="bn-card-topic">Signal/noise &mdash; filtering</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+  </a>
+  <a href="lock-in-checklist.qmd" class="bn-card">
     <div class="bn-card-title">Lock-in setup checklist</div>
     <div class="bn-card-topic">Signal/noise &mdash; detection</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+  </a>
+  <a href="choosing-an-adc.qmd" class="bn-card">
+    <div class="bn-card-title">Choosing an ADC</div>
+    <div class="bn-card-topic">Signal/noise &mdash; data acquisition</div>
+  </a>
+  <a href="grounding-topologies.qmd" class="bn-card">
     <div class="bn-card-title">Grounding topologies</div>
     <div class="bn-card-topic">Signal/noise &mdash; EMI</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
+  </a>
+  <a href="hunting-50-60hz-hum.qmd" class="bn-card">
+    <div class="bn-card-title">Hunting 50/60 Hz hum</div>
+    <div class="bn-card-topic">Signal/noise &mdash; EMI</div>
+  </a>
+  <a href="transimpedance-amp-design.qmd" class="bn-card">
+    <div class="bn-card-title">Transimpedance amp design &amp; noise budget</div>
+    <div class="bn-card-topic">Electronics &mdash; analog</div>
+  </a>
+  <a href="detector-selection.qmd" class="bn-card">
+    <div class="bn-card-title">Detector selection by regime</div>
+    <div class="bn-card-topic">Electronics &mdash; detectors</div>
+  </a>
+  <a href="band-gaps-detector-materials.qmd" class="bn-card">
+    <div class="bn-card-title">Band gaps and detector materials</div>
+    <div class="bn-card-topic">Electronics &mdash; detectors</div>
+  </a>
+  <a href="pid-tuning.qmd" class="bn-card">
+    <div class="bn-card-title">PID tuning &amp; anatomy of a servo lock</div>
+    <div class="bn-card-topic">Electronics &mdash; control</div>
+  </a>
 </div>
 ```
 
@@ -95,26 +107,74 @@ Cross-referenced from the Core chapters, but they stand alone.
     <div class="bn-card-title">Exact-constraint (kinematic) design</div>
     <div class="bn-card-topic">Mechanical &mdash; precision design</div>
   </a>
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+  <a href="thermal-center.qmd" class="bn-card">
     <div class="bn-card-title">The thermal center</div>
     <div class="bn-card-topic">Mechanical &mdash; thermal design</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+  </a>
+  <a href="curing-over-constraint.qmd" class="bn-card">
+    <div class="bn-card-title">Curing over-constraint</div>
+    <div class="bn-card-topic">Mechanical &mdash; precision design</div>
+  </a>
+  <a href="flexure-design.qmd" class="bn-card">
+    <div class="bn-card-title">Flexure design primer</div>
+    <div class="bn-card-topic">Mechanical &mdash; compliant mechanisms</div>
+  </a>
+  <a href="metals-comparison-table.qmd" class="bn-card">
     <div class="bn-card-title">Metals comparison table</div>
     <div class="bn-card-topic">Materials &mdash; selection</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+  </a>
+  <a href="cryo-contraction-integrals.qmd" class="bn-card">
+    <div class="bn-card-title">Cryo contraction &amp; thermal-conductivity integrals</div>
+    <div class="bn-card-topic">Materials &mdash; cryogenic</div>
+  </a>
+  <a href="galling-prone-pairs.qmd" class="bn-card">
+    <div class="bn-card-title">Galling-prone material pairs</div>
+    <div class="bn-card-topic">Materials &mdash; tribology</div>
+  </a>
+  <a href="tolerance-by-process.qmd" class="bn-card">
+    <div class="bn-card-title">Tolerance by process</div>
+    <div class="bn-card-topic">Manufacturing &mdash; tolerances</div>
+  </a>
+  <a href="fits-and-limits.qmd" class="bn-card">
+    <div class="bn-card-title">Fits &amp; limits for holes, shafts, pipes</div>
+    <div class="bn-card-topic">Manufacturing &mdash; tolerances</div>
+  </a>
+  <a href="bearing-selection.qmd" class="bn-card">
+    <div class="bn-card-title">Bearing selection</div>
+    <div class="bn-card-topic">Manufacturing &mdash; rotating parts</div>
+  </a>
+  <a href="lithography-resolution.qmd" class="bn-card">
+    <div class="bn-card-title">Lithography resolution ladder</div>
+    <div class="bn-card-topic">Manufacturing &mdash; microfabrication</div>
+  </a>
+  <a href="vibration-isolation-rules.qmd" class="bn-card">
+    <div class="bn-card-title">Vibration isolation rules of thumb</div>
+    <div class="bn-card-topic">Mechanical &mdash; isolation</div>
+  </a>
+  <a href="pump-selector.qmd" class="bn-card">
     <div class="bn-card-title">Pump selector by pressure</div>
     <div class="bn-card-topic">Vacuum &mdash; pumping</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+  </a>
+  <a href="seal-flange-selector.qmd" class="bn-card">
+    <div class="bn-card-title">Seal &amp; flange selector</div>
+    <div class="bn-card-topic">Vacuum &mdash; sealing</div>
+  </a>
+  <a href="leak-hunting-procedure.qmd" class="bn-card">
+    <div class="bn-card-title">Leak-hunting procedure</div>
+    <div class="bn-card-topic">Vacuum &mdash; leak detection</div>
+  </a>
+  <a href="cryostat-wiring.qmd" class="bn-card">
+    <div class="bn-card-title">Cryostat wiring &amp; heat-sinking</div>
+    <div class="bn-card-topic">Cryogenics &mdash; wiring</div>
+  </a>
+  <a href="cryogen-safety.qmd" class="bn-card">
     <div class="bn-card-title">Cryogen safety</div>
     <div class="bn-card-topic">Cryogenics &mdash; safety</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
+  </a>
+  <a href="thermometer-selection.qmd" class="bn-card">
+    <div class="bn-card-title">Thermometer selection by temperature &amp; field</div>
+    <div class="bn-card-topic">Thermometry &mdash; selection</div>
+  </a>
 </div>
 ```
 
@@ -124,29 +184,37 @@ Cross-referenced from the Core chapters, but they stand alone.
 
 ```{=html}
 <div class="bn-listing">
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
-    <div class="bn-card-title">Solder alloy selection table</div>
+  <a href="solder-alloy-selection.qmd" class="bn-card">
+    <div class="bn-card-title">Solder alloy selection &amp; flux types</div>
     <div class="bn-card-topic">Craft &mdash; soldering</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
-    <div class="bn-card-title">Acetone vs. plastics table</div>
+  </a>
+  <a href="acetone-vs-plastics.qmd" class="bn-card">
+    <div class="bn-card-title">Acetone &amp; solvents vs. plastics table</div>
     <div class="bn-card-topic">Craft &mdash; materials compatibility</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
+  </a>
+  <a href="epoxy-adhesive-selector.qmd" class="bn-card">
+    <div class="bn-card-title">Epoxy &amp; adhesive selector</div>
+    <div class="bn-card-topic">Craft &mdash; adhesives</div>
+  </a>
+  <a href="hazard-quick-reference.qmd" class="bn-card">
+    <div class="bn-card-title">Hazard quick-reference per domain</div>
+    <div class="bn-card-topic">Craft &mdash; safety</div>
+  </a>
+  <a href="troubleshooting-decision-tree.qmd" class="bn-card">
     <div class="bn-card-title">Troubleshooting decision tree</div>
     <div class="bn-card-topic">Craft &mdash; debugging</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
-  <span class="bn-card" style="color:#999;border-color:#ddd;border-left-color:#ccc;">
-    <div class="bn-card-title">Hazard quick-reference</div>
-    <div class="bn-card-topic">Craft &mdash; safety</div>
-    <div style="font-size:0.8rem;color:#aaa;margin-top:0.3rem;">Coming soon</div>
-  </span>
+  </a>
+  <a href="notebook-provenance.qmd" class="bn-card">
+    <div class="bn-card-title">Notebook &amp; provenance standard</div>
+    <div class="bn-card-topic">Craft &mdash; reproducibility</div>
+  </a>
+  <a href="reading-a-datasheet.qmd" class="bn-card">
+    <div class="bn-card-title">Reading a datasheet</div>
+    <div class="bn-card-topic">Craft &mdash; components</div>
+  </a>
 </div>
 ```
 
 ---
 
-*To add a Bench Note, copy [`_template.qmd`](_template.qmd), fill in the fixed fields, and add a link in this listing. See `CONTRIBUTING.md` for the full workflow.*
+*To add a Bench Note, copy [`_template.qmd`](_template.qmd), fill in the fixed fields, and add a link in this listing.*

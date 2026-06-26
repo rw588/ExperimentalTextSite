@@ -1,0 +1,19 @@
+---
+title: "CS-A: Temperature-stabilised photodiode readout"
+---
+
+> **Thread:** Detector (M17) --> transimpedance amp + noise budget (M13) --> grounding/shielding (M15) --> PID temperature lock (M16, M24) --> noise spectrum, PSD, Allan deviation (M7-M8) --> fit and error budget (M2-M5).
+
+*Content to be written.*
+
+## Subsystem overview
+
+*To be written.*
+
+## Design walkthrough
+
+*To be written.*
+
+## Measured performance vs. budget
+
+*To be written.*

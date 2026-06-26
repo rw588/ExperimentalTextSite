@@ -1,0 +1,12 @@
+---
+title: "Reading a fit: residuals, chi-squared, and covariance"
+---
+
+| Field | |
+|---|---|
+| **Concept** | *To be written.* |
+| **Governing equations** | *To be written.* |
+| **Decision rule** | *To be written.* |
+| **Failure modes** | *To be written.* |
+| **See also** | *To be written.* |
+| **References** | *To be written.* |

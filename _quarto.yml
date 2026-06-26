@@ -26,24 +26,100 @@ book:
     - part: "Part I — Measurement & Uncertainty"
       chapters:
         - parts/01-uncertainty/index.qmd
+        - parts/01-uncertainty/01-probability-statistics.qmd
+        - parts/01-uncertainty/02-error-propagation.qmd
         - parts/01-uncertainty/03-estimation-fisher.qmd
+        - parts/01-uncertainty/04-model-fitting.qmd
+        - parts/01-uncertainty/05-systematic-errors.qmd
+        - parts/01-uncertainty/06-bayesian-methods.qmd
     - part: "Part II — Signals & Noise"
       chapters:
         - parts/02-signals-noise/index.qmd
         - parts/02-signals-noise/07-noise.qmd
+        - parts/02-signals-noise/08-fourier-sampling.qmd
+        - parts/02-signals-noise/09-filtering.qmd
+        - parts/02-signals-noise/10-phase-sensitive-detection.qmd
+        - parts/02-signals-noise/11-data-acquisition.qmd
     - part: "Part III — Electronics"
       chapters:
         - parts/03-electronics/index.qmd
+        - parts/03-electronics/12-real-components.qmd
+        - parts/03-electronics/13-opamps-analog.qmd
+        - parts/03-electronics/14-semiconductors.qmd
+        - parts/03-electronics/15-grounding-shielding-emi.qmd
+        - parts/03-electronics/16-feedback-control.qmd
+        - parts/03-electronics/17-detectors.qmd
     - part: "Part IV — Mechanical, Vacuum, Cryogenics, Optics"
       chapters:
         - parts/04-mechanical-vacuum-cryo-optics/index.qmd
+        - parts/04-mechanical-vacuum-cryo-optics/18-precision-mechanical.qmd
+        - parts/04-mechanical-vacuum-cryo-optics/19-materials-selection.qmd
+        - parts/04-mechanical-vacuum-cryo-optics/20-manufacturing-tolerances.qmd
+        - parts/04-mechanical-vacuum-cryo-optics/21-vibration-isolation.qmd
+        - parts/04-mechanical-vacuum-cryo-optics/22-vacuum-technology.qmd
+        - parts/04-mechanical-vacuum-cryo-optics/23-cryogenics.qmd
+        - parts/04-mechanical-vacuum-cryo-optics/24-thermometry.qmd
+        - parts/04-mechanical-vacuum-cryo-optics/25-optics-lasers.qmd
+        - parts/04-mechanical-vacuum-cryo-optics/26-magnetics.qmd
     - part: "Part V — Practice & Craft"
       chapters:
         - parts/05-practice-craft/index.qmd
+        - parts/05-practice-craft/27-soldering-interconnect.qmd
+        - parts/05-practice-craft/28-chemicals-compatibility.qmd
+        - parts/05-practice-craft/29-safety.qmd
+        - parts/05-practice-craft/30-lab-craft.qmd
+    - part: "Capstone Case Studies"
+      chapters:
+        - capstones/index.qmd
+        - capstones/cs-a-photodiode-readout.qmd
+        - capstones/cs-b-cryo-optical-setup.qmd
+        - capstones/cs-c-dc-measurement.qmd
     - part: "Bench Notes"
       chapters:
         - bench-notes/index.qmd
+        - bench-notes/distribution-chooser.qmd
+        - bench-notes/error-budget-template.qmd
+        - bench-notes/fisher-crb.qmd
+        - bench-notes/reading-a-fit.qmd
+        - bench-notes/systematic-hunting.qmd
+        - bench-notes/blind-analysis.qmd
+        - bench-notes/noise-source-cheatsheet.qmd
+        - bench-notes/reading-a-psd.qmd
+        - bench-notes/allan-deviation.qmd
+        - bench-notes/filter-selection.qmd
+        - bench-notes/lock-in-checklist.qmd
+        - bench-notes/choosing-an-adc.qmd
+        - bench-notes/grounding-topologies.qmd
+        - bench-notes/hunting-50-60hz-hum.qmd
+        - bench-notes/transimpedance-amp-design.qmd
+        - bench-notes/detector-selection.qmd
+        - bench-notes/band-gaps-detector-materials.qmd
+        - bench-notes/pid-tuning.qmd
         - bench-notes/exact-constraint-design.qmd
+        - bench-notes/thermal-center.qmd
+        - bench-notes/curing-over-constraint.qmd
+        - bench-notes/flexure-design.qmd
+        - bench-notes/metals-comparison-table.qmd
+        - bench-notes/cryo-contraction-integrals.qmd
+        - bench-notes/galling-prone-pairs.qmd
+        - bench-notes/tolerance-by-process.qmd
+        - bench-notes/fits-and-limits.qmd
+        - bench-notes/bearing-selection.qmd
+        - bench-notes/lithography-resolution.qmd
+        - bench-notes/vibration-isolation-rules.qmd
+        - bench-notes/pump-selector.qmd
+        - bench-notes/seal-flange-selector.qmd
+        - bench-notes/leak-hunting-procedure.qmd
+        - bench-notes/cryostat-wiring.qmd
+        - bench-notes/cryogen-safety.qmd
+        - bench-notes/thermometer-selection.qmd
+        - bench-notes/solder-alloy-selection.qmd
+        - bench-notes/acetone-vs-plastics.qmd
+        - bench-notes/epoxy-adhesive-selector.qmd
+        - bench-notes/hazard-quick-reference.qmd
+        - bench-notes/troubleshooting-decision-tree.qmd
+        - bench-notes/notebook-provenance.qmd
+        - bench-notes/reading-a-datasheet.qmd
     - references.qmd
 
 bibliography: references.bib

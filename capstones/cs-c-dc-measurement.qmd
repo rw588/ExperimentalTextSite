@@ -1,0 +1,19 @@
+---
+title: "CS-C: Measuring a small DC quantity at the statistical limit"
+---
+
+> **Thread:** Modulation + lock-in (M10) --> estimator design at the Cramer-Rao bound (M3) --> blind analysis (M6) --> systematic budget (M5).
+
+*Content to be written.*
+
+## Subsystem overview
+
+*To be written.*
+
+## Design walkthrough
+
+*To be written.*
+
+## Measured performance vs. budget
+
+*To be written.*
